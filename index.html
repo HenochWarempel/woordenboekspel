@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woordenboekspel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Woordenboekspel</h1>
+        <div id="setup-screen">
+            <input type="number" id="player-count" min="3" value="3" placeholder="Aantal spelers">
+            <button onclick="setupGame()">Start Spel</button>
+        </div>
+        <div id="game-screen" style="display: none;">
+            <div id="host-screen">
+                <h2>Host Ronde</h2>
+                <input type="text" id="word-input" placeholder="Voer een woord in">
+                <input type="text" id="real-definition" placeholder="Voer de echte definitie in">
+                <button onclick="startRound()">Start Ronde</button>
+            </div>
+            <div id="player-screen" style="display: none;">
+                <h2>Speler Ronde</h2>
+                <p id="current-word"></p>
+                <input type="text" id="fake-definition" placeholder="Voer een nepdefintie in">
+                <button onclick="submitDefinition()">Verstuur Definitie</button>
+            </div>
+            <div id="voting-screen" style="display: none;">
+                <h2>Stem op de juiste definitie</h2>
+                <div id="definitions-list"></div>
+                <button onclick="showResults()">Toon Resultaten</button>
+            </div>
+            <div id="results-screen" style="display: none;">
+                <h2>Resultaten</h2>
+                <div id="results-list"></div>
+                <button onclick="nextRound()">Volgende Ronde</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
